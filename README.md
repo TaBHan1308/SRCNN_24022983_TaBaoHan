@@ -55,6 +55,47 @@ Nguồn dữ liệu được tải từ Kaggle:
 * T91 Image Dataset: https://www.kaggle.com/datasets/ll01dm/t91-image-dataset
 * Set5 SuperResolution: https://www.kaggle.com/datasets/bijaygurung/set5-superresolution
 
+---
+
+## Cấu trúc dự án
+
+Cấu trúc chính của repository:
+
+```text
+SRCNN_24022983_TaBaoHan/
+│
+├── README.md
+├── .gitignore
+├── .gitattributes
+│
+└── SRCNN/
+    ├── config.py
+    ├── dataset.py
+    ├── image_quality_assessment.py
+    ├── imgproc.py
+    ├── inference.py
+    ├── model.py
+    ├── train.py
+    ├── test.py
+    ├── requirements.txt
+    ├── LICENSE
+    └── scripts/
+```
+
+Ý nghĩa một số file chính:
+
+| File / thư mục                | Chức năng                                                                                              |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `config.py`                   | Thiết lập đường dẫn dữ liệu, hệ số phóng đại, chế độ train/test, số epoch, learning rate và checkpoint |
+| `model.py`                    | Định nghĩa kiến trúc mạng SRCNN                                                                        |
+| `dataset.py`                  | Xử lý dữ liệu huấn luyện và kiểm thử                                                                   |
+| `imgproc.py`                  | Các hàm xử lý ảnh: resize, chuyển đổi màu, chuyển đổi tensor                                           |
+| `image_quality_assessment.py` | Tính các chỉ số đánh giá như PSNR và SSIM                                                              |
+| `train.py`                    | Huấn luyện mô hình SRCNN                                                                               |
+| `test.py`                     | Kiểm thử mô hình trên tập Set5                                                                         |
+| `inference.py`                | Chạy mô hình trên một ảnh đầu vào riêng                                                                |
+| `requirements.txt`            | Danh sách thư viện cần cài đặt                                                                         |
+| `scripts/`                    | Thư mục chứa script hỗ trợ nếu có                                                                      |
 
 ## Cài đặt thư viện
 
